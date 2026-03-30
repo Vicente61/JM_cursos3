@@ -11,8 +11,7 @@ return new class extends Migration {
             $table->string('name', 255);
             $table->string('email', 150)->unique();
             $table->string('phone', 30)->nullable();
-            // Esta é a linha crucial que estava a dar erro:
-            $table->foreignId('role_id')->default(3)->constrained('type_roles')->onDelete('restrict');
+            $table->foreignId('role_id')->constrained('type_roles');
             $table->string('password', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();

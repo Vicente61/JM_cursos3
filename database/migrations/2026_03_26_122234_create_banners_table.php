@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('image_file_id')->constrained('files')->onDelete('restrict');
+            $table->foreignId('image_file_id')->constrained('files');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();

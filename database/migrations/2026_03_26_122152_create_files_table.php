@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('original_file_name', 255);
             $table->string('hash', 64)->unique();
             $table->string('mime_type', 100)->nullable();
-            $table->unsignedInteger('size')->nullable();
+            $table->Integer('size')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

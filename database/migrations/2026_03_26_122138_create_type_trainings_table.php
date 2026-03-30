@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->string('name', 100);
             $table->string('alias', 50)->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('certificate_templates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bg_image_file_id')->constrained('files')->onDelete('restrict');
+            $table->foreignId('bg_image_file_id')->constrained('files');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('image_file_id')->constrained('files')->onDelete('restrict');
+            $table->foreignId('image_file_id')->constrained('files');
             $table->boolean('is_active')->default(true);
             $table->string('url_link', 255)->nullable();
             $table->timestamps();

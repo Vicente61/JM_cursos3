@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void {
         Schema::create('enrollment_payment', function (Blueprint $table) {
-            $table->foreignId('payment_id')->constrained('payments')->onDelete('cascade');
-            $table->foreignId('enrollment_id')->constrained('enrollments')->onDelete('restrict');
+                $table->id();
+            $table->foreignId('payment_id')->constrained('payments');
+            $table->foreignId('enrollment_id')->constrained('enrollments');
             $table->primary(['payment_id', 'enrollment_id']);
+            $table->softDeletes();
         });
     }
 

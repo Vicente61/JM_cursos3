@@ -10,10 +10,10 @@ return new class extends Migration {
             $table->id();
             $table->string('title', 200);
             $table->text('description')->nullable();
-            $table->foreignId('training_type_id')->constrained('type_trainings')->onDelete('restrict');
+            $table->foreignId('training_type_id')->constrained('type_trainings');
             $table->dateTime('presentation_date_time');
-            $table->unsignedInteger('min_enrollments');
-            $table->unsignedInteger('max_enrollments');
+            $table->Integer('min_enrollments');
+            $table->Integer('max_enrollments');
             $table->timestamps();
             $table->softDeletes();
         });

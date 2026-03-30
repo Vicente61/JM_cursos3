@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('speakers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('photo_file_id')->nullable()->constrained('files')->onDelete('set null');
+            $table->foreignId('photo_file_id')->nullable()->constrained('files');
             $table->string('name', 150);
             $table->string('title', 150)->nullable();
             $table->text('bio')->nullable();

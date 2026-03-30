@@ -8,9 +8,10 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('type_roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique();
+            $table->string('name', 100);
             $table->string('alias', 50)->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
